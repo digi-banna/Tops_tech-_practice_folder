@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="script" href="">
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eos neque perferendis fugiat nihil saepe et asperiores, laborum repellendus? Nobis officia repellat ut, molestiae sed quasi. Perspiciatis eligendi obcaecati expedita?</h1>
+    <button id="b1" onclick="hideh1()">hide</button>
+    <button onclick="showh1()">show</button>
+    <button id="hideshoww" onclick="hideshow()" >hide</button>
+</body>
+<script>
+    
+    function hideh1(){
+        document.querySelector("h1").style.display = "none";
+        document.getElementById("hideshoww").innerHTML = "show";
+    }
+    function showh1(){
+        document.querySelector("h1").style.display = "block";
+        document.getElementById("hideshoww").innerHTML = "hide";
+    }
+    function hideshow(){
+        if(document.querySelector("h1").style.display == "none")
+        {
+            document.querySelector("h1").style.display = "block";
+            document.getElementById("hideshoww").innerHTML = "hide";
+        }
+        else
+        {
+            document.querySelector("h1").style.display = "none";
+            document.getElementById("hideshoww").innerHTML = "show";
+        }
+    }
+
+</script>
+</html> 

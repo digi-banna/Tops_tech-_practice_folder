@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Courrency converter</h1>
+    </div>
+    <div class="content">
+        <h4>convert Rupees </h4> 
+        <input type="text" id="inp" placeholder="enter Rupees" >
+        <select name="" id="selection" >
+            <option value="84">US dollor</option>
+            <option value="22">UAE Dirham</option>
+        </select>
+        <button onclick="converter()">convert</button>
+        <input type="text"id="result">
+    </div>
+
+    <script>
+
+        Rupee = document.getElementById("inp");
+        selec = document.getElementById("selection");
+        res = document.getElementById("result");
+
+        function converter(){
+           let a = Rupee.value / selec.value
+           res.value = a.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

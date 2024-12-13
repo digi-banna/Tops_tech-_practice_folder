@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightbox Gallery</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 650px;
+            border: 3px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .main1, .main3 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .main2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .lightbox-content {
+            position: relative;
+            width: 650px;
+            height: 400px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid white;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .imgdiv {
+            width: 20%;
+            height: 200px;
+            border: 3px solid green;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .imgdiv img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main1">
+            <div class="imgdiv" onclick="showLightbox('imgg/bottom2.jpg')">
+                <img src="imgg/bottom2.jpg" alt="Image 1">
+            </div>
+            <div class="imgdiv" onclick="showLightbox('imgg/img1.jpeg')">
+                <img src="imgg/img1.jpeg" alt="Image 2">
+            </div>
+            <div class="imgdiv" onclick="showLightbox('imgg/img2.jpg')">
+                <img src="imgg/img2.jpg" alt="Image 3">
+            </div>
+        </div>
+        <div class="main2" id="lightbox">
+            <div class="lightbox-content">
+                <button class="close-btn" onclick="closeLightbox()">Close</button>
+                <img id="lightbox-img" src="" alt="Enlarged Image">
+            </div>
+        </div>
+        <div class="main3">
+            <div class="imgdiv" onclick="showLightbox('imgg/bottom2.jpg')">
+                <img src="imgg/bottom2.jpg" alt="Image 4">
+            </div>
+            <div class="imgdiv" onclick="showLightbox('imgg/img1.jpeg')">
+                <img src="imgg/img1.jpeg" alt="Image 5">
+            </div>
+            <div class="imgdiv" onclick="showLightbox('imgg/img2.jpg')">
+                <img src="imgg/img2.jpg" alt="Image 6">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        function showLightbox(imageSrc) {
+            lightboxImg.src = imageSrc; 
+            lightbox.style.display = "flex"; 
+           
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = "none"; 
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+elite shopping
+form name validation
+recursive function
+
+
+
+
+
+difference b\w while and do while
+
+for in
+for of
+for each
+
+
+y.forEach((v, key)=>{
+    document.
+})
+
+
+
+
+
+light box gallery
+zoom effect in  product
+gallery editor for brigtness , contrast , on image using range 

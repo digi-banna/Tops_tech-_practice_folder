@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 100%;
+        min-height: 650px;
+        border: 5px solid green;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .main1 {
+    position: relative; /* Ensures child elements can use absolute positioning relative to this parent */
+    border: 5px solid red;
+    width: 40%;
+    height: 300px;
+}
+
+.move {
+    position: absolute; /* Positions the div relative to .main1 */
+    margin-top: 50px; /* Adjust as needed */
+    margin-left: 50px; /* Adjust as needed */
+    /* transform: translate(-50%, -50%); Centers the div over .main1 */
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    z-index: 999;
+    backdrop-filter: brightness(.4) 
+
+}
+
+    .main2{
+        border: 5px solid red;
+        width: 40%;
+        height: 300px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="main1">
+            <img src="imgg/bottom2.jpg" alt="">
+            <div class="move">
+
+            </div>
+        </div>
+        <div class="main2">
+
+        </div>
+    </div>
+</body>
+<script>
+    // Get the element with the class "move"
+    var move = document.querySelector(".move");
+    // Add an event listener to the element
+    window.addEventListener("mousemove", show)
+    function show(x){
+        console.log(x)
+        move.style.transform =' translate('+x.clientX+"px,"+x.clientY+"px)";
+        
+    }
+</script>
+</html>

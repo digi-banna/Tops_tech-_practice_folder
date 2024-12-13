@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    
+</body>
+<script>
+const arr = ["apple", "bannana", "cat", "dog", "elephant"];
+const cars = ["Saab", "Volvo", "BMW"];
+
+
+document.write(arr);
+document.write("<br>")
+
+document.write(cars);
+console.log(arr);
+document.write("<br>")
+
+
+document.write("<h1>for loop print array</h1>")
+
+for(h = 0; h < arr.length; h++){
+    document.write(arr[h] + "<br>");
+
+}
+
+document.write("<br>")
+document.write("<h1>whileloop print array</h1>")
+let nn = 0;
+while(nn<  arr.length)
+{
+    document.write(arr[nn]+ "<br>");
+    nn++;
+}
+
+
+document.write("<br>")
+document.write("<br>")
+document.write("<br>")
+
+
+
+for(i=1; i<=5; i++)
+{   
+    document.write(i)
+}
+
+document.write("<br>")
+
+
+
+
+for(row=1; row<=5; row++)
+{
+    for(col=1; col<=row; col++)
+    {
+        document.write(row )
+        
+    }
+    document.write("<br>")
+}
+
+document.write("<br>")
+
+
+
+for(a=1; a<=15; a++){
+    if(a %2 == 0){
+        document.write(a + " even" + "<br>")
+    }
+    else{
+        document.write(a + " odd" + "<br>")
+    }
+}
+
+
+
+
+document.write("<br>")
+
+
+
+for(b=1; b<=5; b++){
+    for(c=1; c<=b; c++){
+        document.write("*")
+    }
+    document.write("<br>");
+}
+
+
+
+document.write("<br>")
+
+
+
+document.write("<h1>a-z</h1>")
+for (let i = 97; i <= 122; i++) { // ASCII codes for 'a' to 'z'
+    document.write(String.fromCharCode(i) + "<br>");
+}
+</script>
+</html>

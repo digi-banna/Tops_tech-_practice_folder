@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="inpp" onkeyup="perform()">
+        <textarea name="" id="textareaa"></textarea>
+    </div>
+
+    <div>
+        <h1>Multiply as you want</h1>
+        <input type="text" id="inpp2">
+        <select name="" id="choice" onchange="multi()">
+            <option >2</option>
+            <option >3</option>
+        </select>
+        <p id="para"></p>
+    </div>
+</body>
+<script>
+    function perform(){
+        a = document.getElementById("inpp");
+        b = document.getElementById("textareaa");
+        b.value = a.value ;
+    }
+    
+
+    choices =  document.getElementById("choice");
+    inp = document.getElementById("inpp2");
+    result = document.getElementById("para");
+    function multi(){
+        result.innerHtml = (inp.value * choices.value);
+    }
+    
+
+
+
+</script>
+</html>

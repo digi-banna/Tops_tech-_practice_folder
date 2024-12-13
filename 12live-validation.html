@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ece9e6, #ffffff);
+        }
+
+        .wrapper {
+            position: relative;
+            text-align: center;
+        }
+
+        .typing-effect {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .login-box {
+            width: 400px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: none;
+        }
+
+        .login-box h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #444;
+            text-align: center;
+        }
+
+        .input-box {
+            position: relative;
+            margin: 20px 0;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            color: #333;
+            background: transparent;
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color: #888;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        .input-box input:focus ~ label,
+        .input-box input:valid ~ label {
+            top: -10px;
+            font-size: 0.9em;
+            color: #444;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            color: #fff;
+            background: #007BFF;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .register-link {
+            font-size: 0.9em;
+            margin-top: 15px;
+        }
+
+        .register-link a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 500px) {
+            .login-box {
+                width: 90%;
+            }
+        }
+
+        .gb {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="typing-effect" id="typingEffect"></div>
+        <div class="login-box" id="loginBox">
+            <form id="loginForm" method="POST">
+                <h2>Login</h2>
+
+                <div class="input-box">
+                    <input type="text" id="emailInput" autocomplete="off" required name="username">
+                    <label>Email</label>
+                </div>
+                <button type="button" id="continueBtn">Continue</button>
+
+                <div class="input-box gb" id="passwordField">
+                    <input type="password" required name="password">
+                    <label>Password</label>
+                </div>
+
+                <button type="submit" name="login">Login</button>
+
+                <div class="register-link">
+                    <p>Don't have an account? <a href="signin.html">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Typing effect script
+        const typingText = "Welcome to GitHub! Let’s begin the adventure";
+        const typingEffectElement = document.getElementById("typingEffect");
+        const loginBoxElement = document.getElementById("loginBox");
+        let currentIndex = 0;
+
+        function typeText() {
+            if (currentIndex < typingText.length) {
+                typingEffectElement.textContent += typingText[currentIndex];
+                currentIndex++;
+                setTimeout(typeText, 50); // Typing speed
+            } else {
+                // Once typing is complete, wait 3 seconds and show the login form
+                setTimeout(() => {
+                    typingEffectElement.style.display = "none";
+                    loginBoxElement.style.display = "block";
+                }, 1000);
+            }
+        }
+
+        // Initialize typing effect on page load
+        window.addEventListener("load", () => {
+            typingEffectElement.style.display = "block";
+            typeText();
+        });
+
+        // Regular expression for email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Get elements
+        const continueBtn = document.getElementById("continueBtn");
+        const emailInput = document.getElementById("emailInput");
+        const passwordField = document.getElementById("passwordField");
+
+        // Add event listener to the Continue button
+        continueBtn.addEventListener("click", () => {
+            const email = emailInput.value.trim();
+
+            if (emailRegex.test(email)) {
+                passwordField.style.display = "block";
+                continueBtn.style.display = "none";
+            } else {
+                alert("Invalid Email! Please enter a valid email address.");
+            }
+        });
+    </script>
+</body>
+
+</html>

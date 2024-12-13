@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="return check()">
+        <table>
+            <tr>
+                <td>name</td>
+                <td><input type="text" name="" id="name" onblur="bl()"></td>
+                <td id="nameerr"> </td>
+            </tr>
+
+            <tr>
+                <td>id</td>
+                <td><input type="text" name="" id="idd" onblur="bl2()"></td>
+                <td id="iderr"> </td>
+            </tr>
+
+            <tr>
+                <td>subject</td>
+                <td><input type="text" name="" id="subject" onblur="bl3()"></td>
+                <td id="subjecterr"> </td>
+            </tr>
+            <tr>
+                <td><button type="submit" value="">submit</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+    function check() {
+        let name = document.getElementById("name").value;
+        let nameerr = document.getElementById("nameerr");
+
+        let idd = document.getElementById("idd").value;
+        let iderr = document.getElementById("iderr");
+
+        let subject = document.getElementById("subject").value;
+        let subjecterr = document.getElementById("subjecterr");
+
+        nameerr.innerHTML = "";
+        iderr.innerHTML = "";
+        subjecterr.innerHTML = "";
+
+        let valid = true;
+
+        if (name === "") {
+            nameerr.innerHTML = "Field is empty";
+            valid = false;
+        }
+
+        if (idd === "") {
+            iderr.innerHTML = "Field is empty";
+            valid = false;
+        }
+
+        if (subject === "") {
+            subjecterr.innerHTML = "Field is empty";
+            valid = false;
+        }
+
+        return valid;
+    }
+
+    function bl() {
+        let name = document.getElementById("name").value;
+        let nameerr = document.getElementById("nameerr");
+        nameerr.innerHTML = "";
+        if (name === "") {
+            nameerr.innerHTML = "Field is empty";
+        }
+      
+        
+    }
+     
+     function bl2(){
+        let idd = document.getElementById("idd").value;
+        let iderr = document.getElementById("iderr");
+        iderr.innerHTML = "";
+        if (idd === "") {
+            iderr.innerHTML = "Field is empty";
+        }
+
+     }
+
+     function bl3(){
+        let subject = document.getElementById("subject").value;
+        let subjecterr = document.getElementById("subjecterr");
+        subjecterr.innerHTML = "";
+        if (subject === "") {
+            subjecterr.innerHTML = "Field is empty";
+        }
+
+     }
+</script>
+
+</html>

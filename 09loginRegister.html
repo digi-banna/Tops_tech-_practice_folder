@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 70%;
+            width: 50%;
+            border: 5px solid red;
+        }
+
+        .register {
+            border: 2px solid red;
+            display: none;
+        }
+
+        .login {
+            border: 2px solid red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="btns">
+            <button onclick="showLogin()">Login</button>
+            <button onclick="showRegister()">Register</button>
+        </div>
+        <div class="Login">
+            <h1>Login form</h1>
+        </div>
+        <div class="register">
+            <h1>Register form.0</h1>
+        </div>
+    </div>
+</body>
+<script>
+    let log = document.querySelector(".Login");
+    let reg = document.querySelector(".register");
+
+    function showLogin() {
+        log.style.display = "block";
+        reg.style.display = "none";
+    }
+
+    function showRegister() {
+        log.style.display = "none";
+        reg.style.display = "block";
+    }
+</script>
+</html>

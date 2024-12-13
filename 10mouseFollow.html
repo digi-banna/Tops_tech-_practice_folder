@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        width: 20px;
+        height: 20px;
+        border: 3px solid red;
+        top: -10px;
+        left: -10px;
+        position: absolute;
+        border-radius: 50px;
+    }
+</style>
+<body>
+    <div class="container">
+
+    </div>
+</body>
+<script>
+    var container = document.querySelector('.container');
+
+    window.addEventListener("mousemove", show)
+
+    function show(x){
+        console.log(x)
+        container.style.transform =' translate('+x.clientX+"px,"+x.clientY+"px)";
+        
+    }
+</script>
+</html> 
